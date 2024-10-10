@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
 </head>
 <body>
-    <form action="">
+    <form action="/AddDados">
         <h1 id="fundo">Inserir Dados</h1>
         <div class="container">
-            <input type="text" name="Usuario" id="" >
+            <h1>Inserir dados do Usuario</h1>
+            <input type="text" name="UsuarioUsu" id="" placeholder="Digite seu nome" >
+            <input type="email" name="EmailUsu" id="" placeholder="Digite seu e-mail">
+            <input type="password" name="SenhaUsu" id="" placeholder="Digite sua senha">
+            <button id="botao">Enviar os dados</button>
         </div>
     </form>
 </body>

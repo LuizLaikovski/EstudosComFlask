@@ -17,5 +17,23 @@ html, body {
     border-radius: 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
+}
+
+.container input {
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid black;
+    height: 40px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+#botao {
+    margin-top: 30px;
+    width: 200px;
+    border-radius: 20px;
+    border: 1px solid black;
+    height: 30px;
+    text-align: center;
 }

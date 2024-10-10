@@ -16,9 +16,24 @@ def DbConect():
 def homepage():
     return render_template("index.html")
 
-@app.route('/AddDados', methods=['post'])
+@app.route('/AddDados', methods=['POST'])
 def AddDados():
+    nome_usuario = request.form.get('UsuarioUsu')
+    email_usuario = request.form.get('EmailUsu')
+    senha_usuario = request.form.get('SenhaUsu')
 
+    print(nome_usuario)
+    print(email_usuario)
+    print(senha_usuario)
+
+    conexao = DbConect()
+    cursor = conexao.cursor()
+    comando = f'INSERT INTO usuarios(usuario, email, senha) VALUES ("{nome_usuario}","{email_usuario}","{senha_usuario}");'
+    cursor.execute(comando)
+    conexao.commit()
+
+    cursor.close()
+    conexao.close()
     return redirect(url_for('homepage'))
 
 
