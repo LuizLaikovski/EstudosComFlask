@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crud FullStack</title>
+    <title>Crud FullStack/Create</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
 </head>
 <body>
-    <form action="/AddDados">
+    <form action="/AddDados" method="post">
         <h1 id="fundo">Inserir Dados</h1>
         <div class="container">
             <h1>Inserir dados do Usuario</h1>
             <input type="text" name="UsuarioUsu" id="" placeholder="Digite seu nome" >
             <input type="email" name="EmailUsu" id="" placeholder="Digite seu e-mail">
             <input type="password" name="SenhaUsu" id="" placeholder="Digite sua senha">
-            <button id="botao">Enviar os dados</button>
+            <button id="botao">Enviar os dados</button><br><br><br><br><br><br><br><br><br>
         </div>
+    </form>
+    <form action="LerDados">
+        <button>Teste</button>
     </form>
 </body>
 </html>

@@ -6,11 +6,11 @@ app.config['SECRET_KEY'] = '123456789'
 
 def DbConect():
     return mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='16012008',
-        database='estudodoflask'
-    )
+    host='localhost',
+    user='root',
+    password='16012008',
+    database='estudodoflask'
+)
 
 @app.route('/')
 def homepage():
@@ -22,9 +22,9 @@ def AddDados():
     email_usuario = request.form.get('EmailUsu')
     senha_usuario = request.form.get('SenhaUsu')
 
-    print(nome_usuario)
-    print(email_usuario)
-    print(senha_usuario)
+    print(nome_usuario);
+    print(email_usuario);
+    print(senha_usuario);
 
     conexao = DbConect()
     cursor = conexao.cursor()
@@ -36,6 +36,10 @@ def AddDados():
     conexao.close()
     return redirect(url_for('homepage'))
 
+@app.route('/LerDados')
+def Read():
+    
+    return render_template('Read.html')
 
 if __name__ in "__main__":
     app.run(debug=True)

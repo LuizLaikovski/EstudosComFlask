@@ -37,3 +37,9 @@ html, body {
     height: 30px;
     text-align: center;
 }
+
+.links {
+    text-decoration: none;
+    font-size: 17px;
+    color: black;
+}
