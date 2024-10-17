@@ -41,7 +41,7 @@ def Read():
     conexao.close()
     return render_template('Read.html', usuariosBD=usuariosBD)
 
-@app.route('/DeletarDados')
+@app.route('/EditarDados')
 def Delete():
     conexao = DbConect()
     cursor = conexao.cursor()
@@ -49,10 +49,12 @@ def Delete():
     usuariosBD = cursor.fetchall()
     cursor.close()
     conexao.close()
-    return render_template('Delete.html', usuariosBD=usuariosBD)
+    return render_template('Update.html', usuariosBD=usuariosBD)
 
 @app.route('/EditarNome')
 def EditarNome():
+    nomea = request.form.get('NomeAtual')
+    nomen = request.form.get('NomeNovo')
     return render_template('editarn.html')
 
 if __name__ in "__main__":
