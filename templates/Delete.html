@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/delete.css')}}">
+</head>
+<body style="display: flex; justify-content: center;">
+    <div class="tabela">
+        <table id="tablet">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for usuario in usuariosBD %}
+                    <tr>
+                        <td>{{usuario[1]}}</td>
+                        <td>{{usuario[2]}}</td>
+                    </tr>
+                {%else%}
+                <tr>
+                    <td>Nenhum Usuario encontrado</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+        <h1>Você deseja editar que dado: </h1>
+        <form action="EditarNome">
+            <button>Nome</button>
+        </form>
+        <form action="">
+            <button>E-mail</button>            
+        </form>
+    </div>
+</body>
+</html>

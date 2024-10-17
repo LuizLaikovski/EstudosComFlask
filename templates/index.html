@@ -6,7 +6,7 @@
     <title>Crud FullStack/Create</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
 </head>
-<body>
+<body style="display: flex; flex-direction: column;">
     <form action="/AddDados" method="post">
         <h1 id="fundo">Inserir Dados</h1>
         <div class="container">
@@ -16,9 +16,12 @@
             <input type="password" name="SenhaUsu" id="" placeholder="Digite sua senha">
             <button id="botao">Enviar os dados</button><br><br><br><br><br><br><br><br><br>
         </div>
+    </form><br><br>
+    <form action="LerDados" style="margin-left: 45%;">
+        <button>Ver os dados</button>
     </form>
-    <form action="LerDados">
-        <button>Teste</button>
+    <form action="DeletarDados">
+        <button>Deletar dados</button>
     </form>
 </body>
 </html>

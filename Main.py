@@ -22,10 +22,6 @@ def AddDados():
     email_usuario = request.form.get('EmailUsu')
     senha_usuario = request.form.get('SenhaUsu')
 
-    print(nome_usuario);
-    print(email_usuario);
-    print(senha_usuario);
-
     conexao = DbConect()
     cursor = conexao.cursor()
     comando = f'INSERT INTO usuarios(usuario, email, senha) VALUES ("{nome_usuario}","{email_usuario}","{senha_usuario}");'
@@ -38,8 +34,26 @@ def AddDados():
 
 @app.route('/LerDados')
 def Read():
-    
-    return render_template('Read.html')
+    conexao = DbConect()
+    cursor = conexao.cursor()
+    cursor.execute('SELECT * FROM usuarios;')
+    usuariosBD = cursor.fetchall()
+    conexao.close()
+    return render_template('Read.html', usuariosBD=usuariosBD)
+
+@app.route('/DeletarDados')
+def Delete():
+    conexao = DbConect()
+    cursor = conexao.cursor()
+    cursor.execute('SELECT * FROM usuarios;')
+    usuariosBD = cursor.fetchall()
+    cursor.close()
+    conexao.close()
+    return render_template('Delete.html', usuariosBD=usuariosBD)
+
+@app.route('/EditarNome')
+def EditarNome():
+    return render_template('editarn.html')
 
 if __name__ in "__main__":
     app.run(debug=True)

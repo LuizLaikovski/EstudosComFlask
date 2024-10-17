@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crud FullStack/Read</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/read.css')}}">
 </head>
-<body>
-    
+<body style="display: flex; justify-content: center; align-items: center;">
+    <div class="tabela">
+        <table id="tablet">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for usuario in usuariosBD %}
+                    <tr>
+                        <td>{{usuario[0]}}</td>
+                        <td>{{usuario[1]}}</td>
+                        <td>{{usuario[2]}}</td>
+                    </tr>
+                {%else%}
+                <tr>
+                    <td>Nenhum Usuario encontrado</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
