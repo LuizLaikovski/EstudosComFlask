@@ -60,8 +60,16 @@ def EditarNome():
 def PegarDados():
     nomea = request.form.get('NomeAtual')
     nomen = request.form.get('NomeNovo')
-    print(nomea)
-    print(nomen)
+    
+    conexao = DbConect()
+    cursor = conexao.cursor()
+    comando = f'SELECT usuario FROM usuarios WHERE usuario = "{nomea}";'
+    nomebd = cursor.execute(comando)
+    cursor.fetchone()
+    print(nomebd)
+    cursor.close()
+    conexao.close()
+
     return render_template('editarn.html')
 
 
