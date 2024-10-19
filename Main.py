@@ -42,7 +42,7 @@ def Read():
     return render_template('Read.html', usuariosBD=usuariosBD)
 
 @app.route('/EditarDados')
-def Delete():
+def Update():
     conexao = DbConect()
     cursor = conexao.cursor()
     cursor.execute('SELECT * FROM usuarios;')
@@ -53,9 +53,21 @@ def Delete():
 
 @app.route('/EditarNome')
 def EditarNome():
+    return render_template('editarn.html')
+
+
+@app.route('/PegarDadosDoNovoNome', methods=['POST'])
+def PegarDados():
     nomea = request.form.get('NomeAtual')
     nomen = request.form.get('NomeNovo')
+    print(nomea)
+    print(nomen)
     return render_template('editarn.html')
+
+
+
+
+
 
 if __name__ in "__main__":
     app.run(debug=True)

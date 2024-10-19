@@ -6,11 +6,13 @@
     <title>Editar nome</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/editarn.css')}}">
 </head>
-<body>
-    <form action="" method="post">
+<body style="display: flex; justify-content: center; margin-top: 12%;">
+    <form action="/PegarDadosDoNovoNome" method="post">
         <div class="container">
+            <h1>Editar Nome do Usuario</h1>
             <input type="text" name="NomeAtual" id="" placeholder="Insira o nome que deseja editar">
             <input type="text" name="NomeNovo" id="" placeholder="Insira o novo nome">
+            <button id="butau">Atualizar</button>
         </div>
     </form>
 </body>
