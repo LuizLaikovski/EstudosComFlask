@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar E-mail </title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/editare.css')}}">
+</head>
+<body style="display: flex; justify-content: center; margin-top: 12%;">
+    <form action="/PegarDadosNovoEmail" method="post">
+        <div class="container">
+            <input type="email" name="EmailAtual" placeholder="Digite seu Novo email">
+            <input type="email" name="EmailNovo" placeholder="Digite seu Novo Email">
+            <button id="butau">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>

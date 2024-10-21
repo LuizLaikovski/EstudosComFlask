@@ -63,18 +63,59 @@ def PegarDados():
     
     conexao = DbConect()
     cursor = conexao.cursor()
-    comando = f'SELECT usuario FROM usuarios WHERE usuario = "{nomea}";'
-    nomebd = cursor.execute(comando)
-    cursor.fetchone()
-    print(nomebd)
+    comando = f'UPDATE usuarios SET usuario = "{nomen}" WHERE usuario = "{nomea}";'
+    cursor.execute(comando)
+    conexao.commit()
+
     cursor.close()
     conexao.close()
-
     return render_template('editarn.html')
 
 
+@app.route('/EditarEmail')
+def EditarEmail():
+
+    return render_template('editare.html')
 
 
+@app.route('/PegarDadosNovoEmail', methods=['POST'])
+def PegarDadosEmail():
+    emaila = request.form.get('EmailAtual')
+    emailn = request.form.get('EmailNovo')
+
+    print(emaila)
+    print(emailn)
+
+    conexao = DbConect()
+    cursor = conexao.cursor()
+    comando = f'UPDATE usuarios SET email = "{emailn}" WHERE email = "{emaila}";'
+    cursor.execute(comando)
+    conexao.commit()
+
+    cursor.close()
+    conexao.close()
+    return render_template('editare.html')
+
+@app.route('/Delete')
+def deletar():
+    return render_template('Delete.html')
+
+
+@app.route('/PegarDadosDelete', methods=['POST'])
+def PegarDadosDelete():
+    usuario = request.form.get('UsuarioDeletar')
+    print(usuario)
+
+    conexao = DbConect()
+    cursor = conexao.cursor()
+
+    comando = f'DELETE FROM usuarios WHERE usuario = "{usuario}";'
+    cursor.execute(comando)
+    conexao.commit()
+
+    cursor.close()
+    conexao.close()
+    return render_template('Delete.html')
 
 
 if __name__ in "__main__":
