@@ -6,35 +6,37 @@
     <title>Update</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/update.css')}}">
 </head>
-<body style="display: flex; justify-content: center;">
-    <div class="tabela">
-        <table id="tablet">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                {%for usu in usuariosBD %}
+<body> 
+    <section class="paralax" id="section1">
+        <div class="tabela">
+            <table id="tablet">
+                <thead>
                     <tr>
-                        <td>{{usu[1]}}</td>
-                        <td>{{usu[2]}}</td>
+                        <th>Nome</th>
+                        <th>Email</th>
                     </tr>
-                {%else%}
-                <tr>
-                    <td>Nenhum Usuario encontrado</td>
-                </tr>
-                {%endfor%}
-            </tbody>
-        </table>
-        <h1>Você deseja editar que dado: </h1>
-        <form action="/EditarNome">
-            <button>Nome</button>
-        </form>
-        <form action="/EditarEmail">
-            <button>E-mail</button>            
-        </form>
-    </div>
+                </thead>
+                <tbody>
+                    {%for usu in usuariosBD %}
+                        <tr>
+                            <td>{{usu[1]}}</td>
+                            <td>{{usu[2]}}</td>
+                        </tr>
+                    {%else%}
+                    <tr>
+                        <td>Nenhum Usuario encontrado</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+            <h1>Você deseja editar que dado: </h1>
+            <form action="/EditarNome">
+                <button  class="botaou">Nome</button>
+            </form>
+            <form action="/EditarEmail">
+                <button class="botaou">E-mail</button>            
+            </form>
+        </div>
+    </section>
 </body>
 </html>

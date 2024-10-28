@@ -1,7 +1,8 @@
 .container {
     height: 350px;
     width: 400px;
-    background-color: wheat;
+    background-color: none;
+    backdrop-filter: blur(20px);
     border: 1px solid black;
     border-radius: 30px;
     display: flex;
@@ -18,10 +19,31 @@
     margin-top: 35px;
 }
 
+.container h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
 #butau {
     width: 300px;
     height: 40px;
     margin-top: 30px;
     border-radius: 20px;
     border: solid 1px black;
+}
+
+.paralax {
+    position: relative;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#section1 {
+    background-image: url(Background/acuiwf.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

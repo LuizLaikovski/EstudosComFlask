@@ -6,13 +6,16 @@
     <title>Editar E-mail </title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/editare.css')}}">
 </head>
-<body style="display: flex; justify-content: center; margin-top: 12%;">
-    <form action="/PegarDadosNovoEmail" method="post">
-        <div class="container">
-            <input type="email" name="EmailAtual" placeholder="Digite seu Novo email">
-            <input type="email" name="EmailNovo" placeholder="Digite seu Novo Email">
-            <button id="butau">Enviar</button>
-        </div>
-    </form>
+<body>
+    <section class="paralax" id="section1">
+        <form action="/PegarDadosNovoEmail" method="post">
+            <div class="container">
+                <h1>Editar o E-mail:</h1>
+                <input type="email" name="EmailAtual" placeholder="Digite seu Novo email">
+                <input type="email" name="EmailNovo" placeholder="Digite seu Novo Email">
+                <button id="butau">Enviar</button>
+            </div>
+        </form>
+    </section>
 </body>
 </html>

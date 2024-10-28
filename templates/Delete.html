@@ -6,12 +6,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/delete.css')}}">
 </head>
-<body style="display: flex; justify-content: center; margin-top: 12%;">
-    <form action="/PegarDadosDelete" method="post">
-        <div class="container">
-            <input type="text" name="UsuarioDeletar" placeholder="Digite o cadastro que deseja excluir">
-            <button id="butau">Deletar Cadastro</button>
-        </div>
-    </form>
+<body>
+    <section class="paralax" id="section1">
+        <form action="/PegarDadosDelete" method="post">
+            <div class="container">
+                <h1>Deletar Usuario</h1>
+                <input type="text" name="UsuarioDeletar" placeholder="Digite o cadastro que deseja excluir">
+                <button id="butau">Deletar Cadastro</button>
+            </div>
+        </form>
+    </section>
 </body>
 </html>

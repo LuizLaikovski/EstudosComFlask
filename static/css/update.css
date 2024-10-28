@@ -1,7 +1,8 @@
 .tabela {
     height: 600px;
     width: 400px;
-    background-color: wheat;
+    background-color: none;
+    backdrop-filter: blur(20px);
     border: 1px solid black;
     border-radius: 30px;
     display: flex;
@@ -10,6 +11,46 @@
     flex-direction: column;
 }
 
+.tabela h1 {
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #tablet {
     font-size: 20px;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.paralax {
+    position: relative;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#section1 {
+    background-image: url(Background/lua.webp);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tablet thead {
+    color: whitesmoke;
+}
+
+#tablet tbody {
+    color: whitesmoke;
+}
+
+.botaou {
+    margin-top: 30px;
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: whitesmoke;
 }
