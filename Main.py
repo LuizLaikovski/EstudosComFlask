@@ -24,7 +24,7 @@ def AddDados():
 
     conexao = DbConect()
     cursor = conexao.cursor()
-    comando = f'INSERT INTO usuarios(usuario, email, senha) VALUES ("{nome_usuario}","{email_usuario}","{senha_usuario}");'
+    comando = f'INSERT INTO usuarios(usuario, email, senha) VALUES ("{nome_usuario}","{email_usuario}",{senha_usuario}");'
     cursor.execute(comando)
     conexao.commit()
 
